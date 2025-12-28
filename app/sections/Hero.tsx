@@ -57,7 +57,7 @@ export default function Hero() {
         </div>
 
         {/* Right content */}
-        <div className="flex items-center md:pl-10">
+        <div className="flex items-center p-4 md:pl-10">
           <motion.div
             className="w-full max-w-xl py-14 md:py-0"
             variants={container}

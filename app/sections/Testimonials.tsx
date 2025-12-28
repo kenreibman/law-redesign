@@ -4,9 +4,9 @@ import Image from "next/image";
 
 type Testimonial = {
   quote: string;
-  name: string;
-  title: string;
-  avatarSrc: string;
+  name?: string;
+  title?: string;
+  avatarSrc?: string;
 };
 
 const testimonials: Testimonial[] = [
@@ -27,9 +27,6 @@ const testimonials: Testimonial[] = [
   {
     quote:
       "Kenstera cut our negotiation cycles by nearly half. Recommendations surface issues instantly, and our team finally works with full confidence.",
-    name: "Amina Patel",
-    title: "Head of Compliance, Finora Capital",
-    avatarSrc: "/images/avatars/avatar-3.png",
   },
   {
     quote:
@@ -48,9 +45,6 @@ const testimonials: Testimonial[] = [
   {
     quote:
       "Audit logs and AI-assisted reviews save us days every month. Kenstera sets a new standard for legal-tech transparency.",
-    name: "Noah Kim",
-    title: "Compliance Manager, Arbor & Co.",
-    avatarSrc: "/images/avatars/avatar-6.png",
   },
 ];
 
@@ -73,38 +67,58 @@ export default function Testimonials() {
 
         {/* Masonry columns */}
         <div className="columns-1 gap-4 md:columns-3">
-          {testimonials.map((t, i) => (
-            <article
-              key={i}
-              className="mb-6 break-inside-avoid rounded-md border border-black/10 bg-black/[0.02] p-7"
-            >
-              {/* quote mark */}
-              <div className="mb-4 text-4xl leading-none text-black/10">“</div>
+          {testimonials.map((t, i) => {
+            const hasMeta = Boolean(t.name || t.title || t.avatarSrc);
 
-              <p className="text-sm leading-relaxed text-black/80">{t.quote}</p>
+            return (
+              <article
+                key={i}
+                className="mb-6 break-inside-avoid rounded-md border border-black/10 bg-black/2 p-7"
+              >
+                {/* quote mark */}
+                <div className="mb-4 text-4xl leading-none text-black/10">“</div>
 
-              <div className="my-6 h-px w-full bg-black/10" />
+                <p className="text-sm leading-relaxed text-black/80">{t.quote}</p>
 
-              <div className="flex items-center gap-3">
-                <div className="relative h-10 w-10 overflow-hidden rounded-full bg-black/10">
-                  <Image
-                    src={t.avatarSrc}
-                    alt={`${t.name} headshot`}
-                    fill
-                    sizes="40px"
-                    className="object-cover"
-                  />
-                </div>
+                {hasMeta ? (
+                  <>
+                    <div className="my-6 h-px w-full bg-black/10" />
 
-                <div className="min-w-0">
-                  <div className="truncate text-sm font-medium text-black">
-                    {t.name}
-                  </div>
-                  <div className="truncate text-xs text-black/55">{t.title}</div>
-                </div>
-              </div>
-            </article>
-          ))}
+                    <div className="flex items-center gap-3">
+                      {t.avatarSrc ? (
+                        <div className="relative h-10 w-10 overflow-hidden rounded-full bg-black/10">
+                          <Image
+                            src={t.avatarSrc}
+                            alt={`${t.name ?? "Client"} headshot`}
+                            fill
+                            sizes="40px"
+                            className="object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="h-10 w-10 rounded-full bg-black/10" />
+                      )}
+
+                      {(t.name || t.title) ? (
+                        <div className="min-w-0">
+                          {t.name ? (
+                            <div className="truncate text-sm font-medium text-black">
+                              {t.name}
+                            </div>
+                          ) : null}
+                          {t.title ? (
+                            <div className="truncate text-xs text-black/55">
+                              {t.title}
+                            </div>
+                          ) : null}
+                        </div>
+                      ) : null}
+                    </div>
+                  </>
+                ) : null}
+              </article>
+            );
+          })}
         </div>
       </div>
 

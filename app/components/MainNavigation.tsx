@@ -132,7 +132,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          <div className="mx-auto flex h-[calc(100dvh-5rem)] max-w-6xl flex-col items-center justify-center gap-7 px-5">
+          <div className="bg-white mx-auto flex h-[calc(100dvh-5rem)] max-w-6xl flex-col items-center justify-center gap-7 px-5">
             <ul className="flex flex-col items-center gap-7">
               {navItems.map((item) => (
                 <li key={item.href}>
