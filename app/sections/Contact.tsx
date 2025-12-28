@@ -58,7 +58,7 @@ export default function Contact() {
                 href="tel:+12125550123"
                 className="group flex w-fit items-center gap-3 text-sm text-black/80 hover:text-black"
               >
-                <span className="grid h-10 w-10 place-items-center rounded-md bg-black/[0.04] ring-1 ring-black/10">
+                <span className="grid h-10 w-10 place-items-center rounded-md bg-black/4 ring-1 ring-black/10">
                   <Phone className="h-4 w-4" />
                 </span>
                 <span className="underline-offset-4 group-hover:underline">
@@ -67,7 +67,7 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className="mt-10 rounded-md border border-black/10 bg-black/[0.02] p-5 text-xs leading-relaxed text-black/60">
+            <div className="mt-10 rounded-md border border-black/10 bg-black/2 p-5 text-xs leading-relaxed text-black/60">
               <div className="font-medium text-black/70">
                 Typical response time
               </div>
