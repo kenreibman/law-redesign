@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion, cubicBezier } from "framer-motion";
+import { useMotionEnabled } from "@/app/hooks/useMotionEnabled";
 
 const cases = [
   {
@@ -28,6 +29,7 @@ const cases = [
 ];
 
 export default function Cases() {
+  const motionEnabled = useMotionEnabled();
   const reduceMotion = useReducedMotion();
 
   /* Header animation: bottom → top */
@@ -60,15 +62,26 @@ export default function Cases() {
     },
   };
 
+  // When motion is disabled, force everything to render in its "shown" state
+  const headerVariants = motionEnabled ? headerVariant : undefined;
+  const gridVariants = motionEnabled ? container : undefined;
+  const itemVariants = motionEnabled ? card : undefined;
+
+    const revealProps = motionEnabled
+    ? { initial: "hidden" as const, whileInView: "show" as const }
+    : {};
+
+  const headerViewport = motionEnabled ? { once: true, amount: 0.7 } : undefined;
+  const gridViewport = motionEnabled ? { once: true, amount: 0.35 } : undefined;
+
   return (
     <section className="bg-white py-28">
       <div className="mx-auto max-w-6xl px-5">
         {/* Header */}
         <motion.div
           variants={headerVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={headerViewport}
+          {...revealProps}
           className="mb-16 max-w-2xl"
         >
           <span className="mb-1 inline-block text-xs uppercase tracking-widest text-black/50">

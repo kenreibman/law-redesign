@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion, cubicBezier } from "framer-motion";
+import { useMotionEnabled } from "@/app/hooks/useMotionEnabled";
 
 type Service = {
   title: string;
@@ -37,6 +38,7 @@ const services: Service[] = [
 ];
 
 export default function Services() {
+  const motionEnabled = useMotionEnabled();
   const reduceMotion = useReducedMotion();
   const ease = cubicBezier(0.22, 1, 0.36, 1);
 
