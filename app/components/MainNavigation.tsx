@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Location", href: "/location" },
-  { label: "Blog", href: "/blog" },
+  { label: "Services", href: "#services" },
+  { label: "About", href: "#about" },
+  { label: "Cases", href: "#cases" },
+  { label: "Team", href: "#team" },
 ];
 
 function IconHamburger(props: React.SVGProps<SVGSVGElement>) {
@@ -88,7 +88,7 @@ export default function Navbar() {
           </ul>
 
           <Link
-            href="/contact"
+            href="#contact"
             className="rounded-lg bg-black px-6 py-3 text-base font-medium text-white shadow-sm transition hover:bg-black/90 focus:outline-none focus:ring-2 focus:ring-black/30"
           >
             Contact

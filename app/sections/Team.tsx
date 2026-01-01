@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { motion, useReducedMotion, cubicBezier } from "framer-motion";
 
 type TeamMember = {
   name: string;
@@ -33,44 +31,11 @@ const team: TeamMember[] = [
 ];
 
 export default function Team() {
-  const reduceMotion = useReducedMotion();
-
-  const headerVariant = {
-    hidden: reduceMotion ? { opacity: 0 } : { opacity: 0, y: 18 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: cubicBezier(0.22, 1, 0.36, 1) },
-    },
-  };
-
-  const container = {
-    hidden: {},
-    show: {
-      transition: { staggerChildren: 0.16 },
-    },
-  };
-
-  const card = {
-    hidden: reduceMotion ? { opacity: 0 } : { opacity: 0, y: 22 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.65, ease: cubicBezier(0.22, 1, 0.36, 1) },
-    },
-  };
-
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-24" id="team">
       <div className="mx-auto max-w-6xl px-5">
         {/* Top-left intro */}
-        <motion.div
-          variants={headerVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.6 }}
-          className="max-w-2xl"
-        >
+        <div className="max-w-2xl">
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-black/60">
             Our Team
           </p>
@@ -83,22 +48,12 @@ export default function Team() {
             Meet the attorneys who combine practical strategy with deep subject
             matter expertise—focused on outcomes that protect what matters.
           </p>
-        </motion.div>
+        </div>
 
         {/* Cards */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.35 }}
-          className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3"
-        >
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
           {team.map((m) => (
-            <motion.article
-              key={m.name}
-              variants={card}
-              className="group relative"
-            >
+            <article key={m.name} className="group relative">
               {/* Info panel sitting on top of the image */}
               <div className="pointer-events-none absolute left-6 right-6 bottom-2 z-10 rounded-md border border-black/10 bg-white/95 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.06)] backdrop-blur">
                 <h3 className="font-serif text-2xl leading-tight text-black">
@@ -120,9 +75,9 @@ export default function Team() {
                   />
                 </div>
               </div>
-            </motion.article>
+            </article>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

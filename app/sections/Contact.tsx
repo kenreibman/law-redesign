@@ -22,7 +22,7 @@ export function Calendar() {
 
 export default function Contact() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-24" id="contact">
       <div className="mx-auto max-w-6xl px-5">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
           {/* Left: copy + contact details */}

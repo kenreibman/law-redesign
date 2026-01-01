@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion, cubicBezier } from "framer-motion";
-import { useMotionEnabled } from "@/app/hooks/useMotionEnabled";
 
 const cases = [
   {
@@ -29,61 +27,11 @@ const cases = [
 ];
 
 export default function Cases() {
-  const motionEnabled = useMotionEnabled();
-  const reduceMotion = useReducedMotion();
-
-  /* Header animation: bottom → top */
-  const headerVariant = {
-    hidden: reduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: cubicBezier(0.22, 1, 0.36, 1) },
-    },
-  };
-
-  /* Cards container: left → right stagger */
-  const container = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.18,
-      },
-    },
-  };
-
-  /* Individual card animation */
-  const card = {
-    hidden: reduceMotion ? { opacity: 0 } : { opacity: 0, x: -32 },
-    show: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.6, ease: cubicBezier(0.22, 1, 0.36, 1) },
-    },
-  };
-
-  // When motion is disabled, force everything to render in its "shown" state
-  const headerVariants = motionEnabled ? headerVariant : undefined;
-  const gridVariants = motionEnabled ? container : undefined;
-  const itemVariants = motionEnabled ? card : undefined;
-
-    const revealProps = motionEnabled
-    ? { initial: "hidden" as const, whileInView: "show" as const }
-    : {};
-
-  const headerViewport = motionEnabled ? { once: true, amount: 0.7 } : undefined;
-  const gridViewport = motionEnabled ? { once: true, amount: 0.35 } : undefined;
-
   return (
-    <section className="bg-white py-28">
+    <section className="bg-white py-28" id="cases">
       <div className="mx-auto max-w-6xl px-5">
         {/* Header */}
-        <motion.div
-          variants={headerVariant}
-          viewport={headerViewport}
-          {...revealProps}
-          className="mb-16 max-w-2xl"
-        >
+        <div className="mb-16 max-w-2xl">
           <span className="mb-1 inline-block text-xs uppercase tracking-widest text-black/50">
             Case Studies
           </span>
@@ -96,20 +44,13 @@ export default function Cases() {
             Our experience spans a wide range of legal cases, delivering
             thoughtful strategy and dependable results.
           </p>
-        </motion.div>
+        </div>
 
         {/* Cards */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.4 }}
-          className="grid grid-cols-1 gap-4 md:grid-cols-3"
-        >
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {cases.map((item, i) => (
-            <motion.div
+            <div
               key={i}
-              variants={card}
               className="group transition-shadow"
             >
               {/* Image */}
@@ -130,9 +71,9 @@ export default function Cases() {
               <p className="mt-3 text-sm leading-relaxed text-black/65">
                 {item.description}
               </p>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

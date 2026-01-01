@@ -34,7 +34,7 @@ export default function About({
   ],
 }: AboutProps) {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-white py-16 md:py-24" id="about">
       <div className="mx-auto max-w-6xl px-5">
         {/* Top: left copy + right image */}
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-10 lg:gap-12">

@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useReducedMotion, cubicBezier } from "framer-motion";
-import { useMotionEnabled } from "@/app/hooks/useMotionEnabled";
 
 type Service = {
   title: string;
@@ -38,65 +36,25 @@ const services: Service[] = [
 ];
 
 export default function Services() {
-  const motionEnabled = useMotionEnabled();
-  const reduceMotion = useReducedMotion();
-  const ease = cubicBezier(0.22, 1, 0.36, 1);
-
-  const header = {
-    hidden: reduceMotion ? { opacity: 0 } : { opacity: 0, y: 18 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease },
-    },
-  };
-
-  const container = {
-    hidden: {},
-    show: {
-      transition: { staggerChildren: 0.14, delayChildren: 0.05 },
-    },
-  };
-
-  const item = {
-    hidden: reduceMotion ? { opacity: 0 } : { opacity: 0, x: -22 },
-    show: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.65, ease },
-    },
-  };
-
   return (
-    <section className="bg-white py-24 md:py-28">
+    <section className="bg-white py-24 md:py-28" id="services">
       <div className="mx-auto max-w-6xl px-5">
         {/* Header */}
-        <motion.div
-          variants={header}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.7 }}
-          className="max-w-4xl"
-        >
-          <p className="text-xs tracking-[0.25em] text-black/60">START WITH US</p>
+        <div className="max-w-4xl">
+          <p className="text-xs tracking-[0.25em] text-black/60">
+            START WITH US
+          </p>
 
           <h2 className="mt-6 font-serif text-4xl leading-[1.1] tracking-tight text-black md:text-6xl">
             Straightforward legal services with no hidden surprises.
           </h2>
-        </motion.div>
+        </div>
 
         {/* Grid */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.35 }}
-          className="mt-24 grid grid-cols-1 gap-0 border border-black/10 md:grid-cols-2 lg:grid-cols-4"
-        >
+        <div className="mt-24 grid grid-cols-1 gap-0 border border-black/10 md:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
-            <motion.div
+            <div
               key={s.title}
-              variants={item}
               className="group relative border-t border-black/10 bg-white p-10 md:border-t-0 md:border-l lg:first:border-l-0"
             >
               <h3 className="font-serif text-2xl leading-snug text-black">
@@ -118,9 +76,9 @@ export default function Services() {
               <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute inset-0 ring-1 ring-black/10" />
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
