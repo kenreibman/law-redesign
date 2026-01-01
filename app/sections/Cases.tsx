@@ -28,12 +28,12 @@ const cases = [
 
 export default function Cases() {
   return (
-    <section className="bg-white py-28" id="cases">
+    <section className="bg-black/5 py-28" id="cases">
       <div className="mx-auto max-w-6xl px-5">
         {/* Header */}
         <div className="mb-16 max-w-2xl">
           <span className="mb-1 inline-block text-xs uppercase tracking-widest text-black/50">
-            Case Studies
+            Featured In
           </span>
 
           <h2 className="font-serif text-4xl leading-tight tracking-tight text-black md:text-5xl">

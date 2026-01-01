@@ -6,6 +6,7 @@ import About from "./sections/About";
 import Team from "./sections/Team";
 import Testimonials from "./sections/Testimonials";
 import Contact from "./sections/Contact";
+import Results from "./sections/Results";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Services />
         <About />
         <Cases />
+        <Results />
         <Team />
         <Testimonials />
         <Contact />

@@ -23,7 +23,7 @@ export default function About({
   eyebrow = "Kenstera",
   heading = "For over 25 years,\nwe’ve been helping\nclients navigate their\nlegal challenges.",
   body = "To simplify the complexities of law. To\nprovide our clients with peace of mind. To\nfoster growth and success by alleviating\nlegal pressures.",
-  ctaHref = "#consultation",
+  ctaHref = "#contact",
   ctaLabel = "Free consultation",
   imageSrc = "/images/about-placeholder.avif",
   imageAlt = "Two professionals shaking hands",
@@ -74,7 +74,7 @@ export default function About({
           <div className="lg:col-span-4">
             <Link
               href={ctaHref}
-              className="inline-flex items-center justify-center rounded-md bg-black px-6 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-black/90"
+              className="inline-flex items-center justify-center rounded-md bg-black px-6 py-4 text-sm font-medium text-white shadow-sm transition hover:bg-black/90"
             >
               {ctaLabel}
             </Link>
