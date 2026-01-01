@@ -12,7 +12,7 @@ export function Calendar() {
     })();
   }, [])
   return <Cal namespace="30min"
-    calLink="Jessica Massimi/30min"
+    calLink="kenstera/30min"
     style={{width:"100%",height:"100%",overflow:"scroll"}}
     config={{"layout":"month_view","theme":"light"}}
     
