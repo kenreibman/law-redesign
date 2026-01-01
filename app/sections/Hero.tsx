@@ -79,7 +79,7 @@ export default function Hero() {
               variants={item}
               className="mt-6 max-w-md text-base leading-relaxed text-black/70"
             >
-              At Kenstera, we understand that legal matters can be complex. Our team is here to guide you
+              At Jessica Massimi, we understand that legal matters can be complex. Our team is here to guide you
               through every step of the process.
             </motion.p>
 

@@ -64,7 +64,7 @@ export default function Navbar() {
           aria-label="Go to homepage"
         >
           <span className="text-2xl font-medium tracking-tight text-black">
-            Kenstera
+            Jessica Massimi
           </span>
         </Link>
 
@@ -118,7 +118,7 @@ export default function Navbar() {
               aria-label="Go to homepage"
             >
               <span className="text-2xl font-medium tracking-tight text-black">
-                Kenstera
+                Jessica Massimi
               </span>
             </Link>
 

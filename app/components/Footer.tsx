@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-5">
             <div className="font-serif text-2xl tracking-tight text-black">
-              Kenstera
+              Jessica Massimi
             </div>
 
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-black/60">
@@ -62,10 +62,10 @@ export default function Footer() {
             <div className="space-y-3 text-sm text-black/70">
               <div>
                 <a
-                  href="mailto:hello@kenstera.com"
+                  href="mailto:info@jessicamassimi.com"
                   className="hover:text-black"
                 >
-                  hello@kenstera.com
+                  info@jessicamassimi.com
                 </a>
               </div>
               <div>
@@ -74,7 +74,7 @@ export default function Footer() {
                 </a>
               </div>
               <div className="pt-2 text-xs text-black/50">
-                © {new Date().getFullYear()} Kenstera LLP
+                © {new Date().getFullYear()} Jessica Massimi LLP
               </div>
             </div>
           </div>

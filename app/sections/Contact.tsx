@@ -12,7 +12,7 @@ export function Calendar() {
     })();
   }, [])
   return <Cal namespace="30min"
-    calLink="kenstera/30min"
+    calLink="Jessica Massimi/30min"
     style={{width:"100%",height:"100%",overflow:"scroll"}}
     config={{"layout":"month_view","theme":"light"}}
     
@@ -43,14 +43,14 @@ export default function Contact() {
 
             <div className="mt-10 space-y-3">
               <a
-                href="mailto:info@kenstera.com"
+                href="mailto:info@jessicamassimi.com"
                 className="group flex w-fit items-center gap-3 text-sm text-black/80 hover:text-black"
               >
                 <span className="grid h-10 w-10 place-items-center rounded-md bg-black/[0.04] ring-1 ring-black/10">
                   <Mail className="h-4 w-4" />
                 </span>
                 <span className="underline-offset-4 group-hover:underline">
-                  info@kenstera.com
+                  info@jessicamassimi.com
                 </span>
               </a>
 
