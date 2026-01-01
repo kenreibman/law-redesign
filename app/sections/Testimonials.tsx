@@ -12,25 +12,25 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "Jessica Massimi completely changed how our team handles contracts. What used to take hours is now done in minutes, securely and with total confidence.",
+      "Kenstera completely changed how our team handles contracts. What used to take hours is now done in minutes, securely and with total confidence.",
     name: "Sarah Thompson",
     title: "Legal Counsel, Veridex Group",
     avatarSrc: "/images/avatars/avatar-1.png",
   },
   {
     quote:
-      "We replaced multiple tools with Jessica Massimi. It’s fast, reliable, and built for teams that care about compliance as much as productivity.",
+      "We replaced multiple tools with Kenstera. It’s fast, reliable, and built for teams that care about compliance as much as productivity.",
     name: "Daniel Ruiz",
     title: "Founder, LexEdge",
     avatarSrc: "/images/avatars/avatar-2.png",
   },
   {
     quote:
-      "Jessica Massimi cut our negotiation cycles by nearly half. Recommendations surface issues instantly, and our team finally works with full confidence.",
+      "Kenstera cut our negotiation cycles by nearly half. Recommendations surface issues instantly, and our team finally works with full confidence.",
   },
   {
     quote:
-      "It’s rare to find a platform that feels both robust and intuitive. Jessica Massimi nails that balance perfectly.",
+      "It’s rare to find a platform that feels both robust and intuitive. Kenstera nails that balance perfectly.",
     name: "Marcus Lee",
     title: "Senior Counsel, Northbridge",
     avatarSrc: "/images/avatars/avatar-4.png",
@@ -44,7 +44,7 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Audit logs and AI-assisted reviews save us days every month. Jessica Massimi sets a new standard for legal-tech transparency.",
+      "Audit logs and AI-assisted reviews save us days every month. Kenstera sets a new standard for legal-tech transparency.",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function Testimonials() {
           <h2 className="font-serif text-4xl leading-tight tracking-tight text-black md:text-5xl">
             More words from our clients
             <br />
-            who trust Jessica Massimi.
+            who trust Kenstera.
           </h2>
         </div>
 

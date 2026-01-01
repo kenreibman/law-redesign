@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-5">
             <div className="font-serif text-2xl tracking-tight text-black">
-              Jessica Massimi
+              Kenstera
             </div>
 
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-black/60">
@@ -74,7 +74,7 @@ export default function Footer() {
                 </a>
               </div>
               <div className="pt-2 text-xs text-black/50">
-                © {new Date().getFullYear()} Jessica Massimi LLP
+                © {new Date().getFullYear()} Kenstera LLP
               </div>
             </div>
           </div>

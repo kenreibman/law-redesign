@@ -20,7 +20,7 @@ type AboutProps = {
 };
 
 export default function About({
-  eyebrow = "Jessica Massimi",
+  eyebrow = "Kenstera",
   heading = "For over 25 years,\nwe’ve been helping\nclients navigate their\nlegal challenges.",
   body = "To simplify the complexities of law. To\nprovide our clients with peace of mind. To\nfoster growth and success by alleviating\nlegal pressures.",
   ctaHref = "#contact",

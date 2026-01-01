@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const cases = [
   {
-    title: "Jessica Massimi vs. Globex Corp.",
+    title: "Kenstera vs. Globex Corp.",
     description:
       "Short description of the case highlighting our strategic approach and successful outcome.",
     image: "https://picsum.photos/600/800?&random=50",
